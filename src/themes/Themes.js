@@ -7,8 +7,8 @@ export const Light = {
         ...DefaultTheme.colors,
         primary: "#3f51b5",
         accent: "#757de8",
-        background: "#E1E1E1",
-        surface: "#F3F3F3",
+        background: "#898C95", //E1E1E1
+        surface: "#F3F3F3", //*F3F3F3*//
         text: "#232323"
     }
 }

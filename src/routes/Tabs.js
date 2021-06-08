@@ -1,23 +1,40 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs' 
 import { FontAwesome5 } from '@expo/vector-icons'
-
+import { COLORS } from '../constants'
 const Tab = createBottomTabNavigator()
 
 import Home from '../screens/Home'
-import Sobre from '../screens/Sobre'
+import Configuracoes from '../screens/Configuracoes'
 
-export default function Tabs(){
+
+function Tabs(){
     return(
-        <Tab.Navigator>
-            <Tab.Screen name="Usuário" component={Home}
+        <Tab.Navigator
+        screenOptions={({ route, navigation }) => {
+            return { tabBarLabel: navigation.isFocused() ? route.name : ''}
+        }}
+                tabBarOptions={{
+                    activeTintColor: COLORS.lightGray3,
+        style: {
+            paddingTop: 4,
+            paddingBottom: 4,
+            borderTopWidth: 1,
+            borderTopColor: COLORS.lightGray3
+        }
+          }}
+        >
+            <Tab.Screen name="Início" component={Home}
             options={{tabBarIcon: () => (
-                    <FontAwesome5 name="user" size={24} color="black" />)
+                    <FontAwesome5 name="home" size={24} color={COLORS.lightGray} />)
             }} />
-            <Tab.Screen name="Sobre" component={Sobre}
+            <Tab.Screen name="Configurações" component={Configuracoes}
             options={{tabBarIcon: () => (
-                    <FontAwesome5 name="cogs" size={24} color="black" />)
+                    <FontAwesome5 name="cogs" size={24} color={COLORS.lightGray} />),
+                    showLabel: false
             }} />
         </Tab.Navigator>
     )
 }
+
+export default Tabs

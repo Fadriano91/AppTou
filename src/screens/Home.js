@@ -6,10 +6,10 @@ import Header from '../components/Header'
 function Home({navigation, theme}){
     const {colors} = theme
     const opcoes = [
-        {id: 1, nome:'Posição', descricao:'Posição do Jogador', 
-            icone: 'blur', menu: 'ListaPosição'},
-        {id: 2, nome:'Configurações', descricao:'Configurações do App', 
-            icone:'cog', menu:'Configuracoes'}
+        {id: 1, nome:'Jogadores', descricao:'Lista dos Jogadores', 
+            icone: 'account-group', menu: 'ListaJogadores'},
+        {id: 2, nome:'Posições', descricao:'Lista das Posições', 
+            icone: 'flag', menu: 'ListaPosições'}
     ]
 
     return(
